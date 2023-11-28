@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"emeraldwalk.runonsave": {
+			"commands": [
+				{
+					"match": "\\.cs$",
+					"cmd": "echo 'saved.' && dotnet publish && echo 'built.' && powershell.exe \"${workspaceFolder}\\Upload.ps1\" "
+				}
+			]
+		}
+	}
+}
