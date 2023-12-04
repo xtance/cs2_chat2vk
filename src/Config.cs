@@ -22,7 +22,7 @@ public class Config
 		using StreamReader reader = new ($"{path}/settings.json");
 		string json = reader.ReadToEnd();
 
-		Console.WriteLine($"[C2VK] Settings: {json}");
+		//Console.WriteLine($"[C2VK] Settings: {json}");
 		Config cfg = JsonConvert.DeserializeObject<Config>(json) ?? throw new Exception("No settings found!");
 		return cfg;
 	}

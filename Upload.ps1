@@ -6,8 +6,8 @@ Add-Type -Path "WinSCPnet.dll"
 # Set up session options
 $sessionOptions = New-Object WinSCP.SessionOptions -Property @{
     Protocol = [WinSCP.Protocol]::Sftp
-    HostName = "localhost"
-    PortNumber = 2222
+    HostName = "192.168.0.103"
+    PortNumber = 22
     UserName = "cs"
     Password = "cs"
     SshHostKeyFingerprint = "ssh-ed25519 255 OVKzGTdNbv/xuXsvjtXXTebSY1OlTIT8EcmkIXlSDj0"

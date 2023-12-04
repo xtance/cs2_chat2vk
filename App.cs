@@ -43,11 +43,15 @@ public class App : BasePlugin
 			{
 				var message = $" >> {player.PlayerName}: \n >> {info.ArgString}";
 				var result = await vk.Send(message);
-				if (result) player.PrintToChat(cfg.success_text);
-				else player.PrintToChat(cfg.fail_text);
 
-				amountThisRound.TryGetValue(player, out var amount);
-				amountThisRound[player] = amount + 1;
+				Server.NextFrame(() =>
+				{
+					if (result) player.PrintToChat(cfg.success_text);
+					else player.PrintToChat(cfg.fail_text);
+
+					amountThisRound.TryGetValue(player, out var amount);
+					amountThisRound[player] = amount + 1;
+				});
 			}
 		});
 
