@@ -7,7 +7,7 @@ public class App : BasePlugin
 	public override string ModuleName => "Chat2VK";
 	public override string ModuleAuthor => "xtance";
 	public override string ModuleDescription => "Server to VK";
-	public override string ModuleVersion => "0.1";
+	public override string ModuleVersion => "0.2";
 
 	private VK? vk;
 	private static readonly Dictionary<CCSPlayerController, int> amountThisRound = new();
