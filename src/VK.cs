@@ -53,7 +53,7 @@ public class VK
 		string json = await response.Content.ReadAsStringAsync();
 		if (debug) Console.WriteLine($"[C2VK] [Post/JSON] {response.StatusCode} | {json} ");
 		if (response.StatusCode != HttpStatusCode.OK) throw new Exception($"[C2VK] [Fail/HTTP] {response.StatusCode} | {json}");
-		if (json != "{\"response\":0}") throw new Exception($"[C2VK] [Fail/VK] {json}");
+		if (json.Contains("error")) throw new Exception($"[C2VK] [Fail/VK] {json}");
 		return true;
 	}
 
